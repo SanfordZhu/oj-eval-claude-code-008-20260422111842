@@ -55,16 +55,15 @@ class ACMOJClient:
             if response.status_code == 204:
                 return {"status": "success", "message": "Operation successful"}
 
-            response.raise_for_status()
-
-            if response.content:
+            # Do not raise for status; return JSON or text for debugging
+            try:
                 return response.json()
-            else:
-                return {"status": "success"}
+            except ValueError:
+                return {"status": "error", "code": response.status_code, "text": response.text}
 
         except requests.exceptions.RequestException as e:
             print(f"API Request failed: {e}")
-            if 'response' in locals() and response:
+            if 'response' in locals() and response is not None:
                 print(f"Response text: {response.text}")
             return None
 
