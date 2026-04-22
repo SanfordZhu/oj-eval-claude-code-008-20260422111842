@@ -1,0 +1,8 @@
+# 2279 - echo
+# mem[*] initially zeros; set mem[0]=1 to mark EOF
+[0]<1
+# Read and echo until EOF (I returns 0 at EOF; O<0 outputs nothing)
+A<I
+O<A
+# Halt when A==0 via table: Z<[A] — only mem[0]=1
+Z<[A]

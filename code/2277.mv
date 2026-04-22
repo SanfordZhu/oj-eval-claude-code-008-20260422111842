@@ -1,0 +1,11 @@
+# 2277 - if else
+# Read two ASCII chars into registers A and B
+A<I
+B<I
+# Default result at address A+B to '0'
+[A+B]<48
+# Overwrite equality case address A+A to '1'
+[A+A]<49
+# Output the value at address A+B: '1' if equal, else '0'
+O<[A+B]
+Z<1

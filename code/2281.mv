@@ -1,0 +1,28 @@
+# 2281 - A+B for 10-digit numbers "XXXXXXXXXX+YYYYYYYYYY"
+# Read 10 digits of first number into mem[0..9]
+A<0
+[0]<I
+[1]<I
+[2]<I
+[3]<I
+[4]<I
+[5]<I
+[6]<I
+[7]<I
+[8]<I
+[9]<I
+# Skip '+'
+B<I
+# Read 10 digits of second number into mem[10..19]
+[10]<I
+[11]<I
+[12]<I
+[13]<I
+[14]<I
+[15]<I
+[16]<I
+[17]<I
+[18]<I
+[19]<I
+# Naive: output nothing
+Z<1

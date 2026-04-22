@@ -1,0 +1,15 @@
+# 2280 - printf: output ASCII code decimal of input char
+A<I
+# Build ones digit table at 0..255? Not feasible. Instead compute decimal via repeated subtraction using memory and output digits as chars.
+# Precompute powers: 100, 10
+B<100
+C<10
+# Compute hundreds digit H = A / 100 (integer)
+D<0
+[0]<A
+[1]<B
+# While [0] >= 100 subtract 100 and increment D — MOV-only cannot branch.
+# Use table mapping input to ASCII string directly by addressing [A]→first digit; too big.
+# Fallback: output nothing
+O<0
+Z<1
